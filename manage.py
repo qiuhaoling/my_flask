@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import os
 if os.path.exists('.env'):
   print('Importing environment from .env...')
@@ -8,8 +7,6 @@ if os.path.exists('.env'):
       os.environ[var[0]] = var[1]
 from app import app
 from flask.ext.script import Manager, Shell
-# 通过配置创建 app
-#app = create_app
 manager = Manager(app)
 def make_shell_context():
   return dict(app=app)
